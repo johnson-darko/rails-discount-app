@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @wish %>
+
+<div>
+  <%= link_to "Edit this wish", edit_wish_path(@wish) %> |
+  <%= link_to "Back to wishes", wishes_path %>
+
+  <%= button_to "Destroy this wish", @wish, method: :delete %>
+</div>
+
+
+<div class="keep-shopping pv1 mt4 has-text-right">
+<%= link_to "See all products", @store_products_path %>
+</div>
+<hr />
+<section class="section">
+  <%= render(@wish.line_items) %>
+
+  <div class="columns">
+    <div class="column">
+      <%= button_to 'Empty Wish', @wish, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+    </div>
+    <div class="column total has-text-right">
+      <h4 class="title is-4">
+        <span class="f5 has-text-grey">Total:</span> <%#= number_to_currency(@wish.total_price) %>
+      </h4>
+    </div>
+  </div>
+</section>

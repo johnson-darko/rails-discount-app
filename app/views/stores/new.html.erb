@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create Store</h3>
+        <%= simple_form_for @store do |f| %>
+          <%= f.input :name, placeholder: 'ShirtShop' %>
+          <%= f.input :address, placeholder: 'Bollstr 123,Köln-Germany' %>
+           <%= f.input :opening_hour, placeholder: '09:30' %>
+            <%= f.input :closing_hour, placeholder: '20:00' %>
+             <%= f.number_field :user_id, id: :store_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+            <!-- Store Logo -->
+          <%#= f.input :photo, as: :file %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

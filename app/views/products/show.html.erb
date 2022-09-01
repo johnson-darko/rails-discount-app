@@ -1,0 +1,46 @@
+<div class="container m-5">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+     
+     <div class="card m-4">
+     	 <p>Product name: <%= @product.name %></p>
+     	
+     </div>
+
+      <!-- <div class="list-group">
+        <%# @restaurant.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <%# count = 0 %>
+              <%# 5.times do %>
+                <%# if review.rating > count %>
+                  <i class="fa-solid fa-star"></i>
+                <%# else %>
+                  <i class="fa-regular fa-star"></i>
+                <%# end %>
+                <%# count += 1 %>
+              <%# end %>
+            </small>
+            <p><%#= review.content %></p>
+          </li>
+        <%# end %>
+      </div> -->
+
+      <%#= simple_form_for [@restaurant, @review] do |f| %>
+        <%#= f.input :rating, collection: 0..5 %>
+        <%#= f.input :content%>
+        <%#= f.submit class: 'btn btn-primary' %>
+      <%# end %>
+    <div class="column is-3 is-offset-1">
+      <div class="bg-white pa4 border-radius-3">
+        <h4 class="title is-5 has-text-centered"><%#= number_to_currency(@instrument.price) %></h4>
+        <p class="has-text-centered mb4">Sold by <%= @product.store.name %></p>
+        <%= button_to 'Add to Wish', line_items_path(product_id: @product), class: 'button is-warning add-to-cart' %>
+      </div>
+    </div>
+  
+  <%#= link_to "Edit product", edit_store_product_path(@product) %>
+      <%= link_to "See all products", store_products_path %>
+    </div>
+  </div>
+</div>

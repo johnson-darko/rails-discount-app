@@ -1,0 +1,27 @@
+<div class="modal fade" id="new_movie_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a product to your <%= store.name %> Store</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <%= simple_form_for [store, product] do |f| %>
+        <div class="modal-body">
+          <%#= f.association :category, collection: Product::CATEGORIES %>
+          <%= f.input :name, placeholder: "Enter Product name" %>
+          <%#= f.input :price, placeholder: "Enter price" %>
+        <%#= f.input :discount, placeholder: "Enter discount price" %>
+        <%#= f.input :description, placeholder: "Enter description" %>
+        <%#= f.input :category, collection: Restaurant::CATEGORIES %>
+        <%#= f.submit class: 'btn btn-primary' %>
+         <%= f.number_field :store_id, id: :product_store_id, class:"form-control", value: current_user.id, type: :hidden %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Add Product", class: "btn btn-flat" %>
+          <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Back</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
